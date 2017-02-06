@@ -8,26 +8,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <TextView
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login" />
-
     <Button
         android:id="@+id/btnlogin"
         android:text="@string/login"
@@ -36,6 +16,19 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textSize="32sp" />
+
+    <EditText
+        android:id="@+id/txtusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="15"
+        android:textSize="32sp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_above="@+id/txtpassword"
+        android:layout_toRightOf="@+id/lblusername"
+        android:layout_toEndOf="@+id/lblusername" />
 
     <EditText
         android:id="@+id/txtpassword"
@@ -72,17 +65,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/txtusername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="15"
-        android:textSize="32sp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_above="@+id/txtpassword"
-        android:layout_toRightOf="@+id/lblusername"
-        android:layout_toEndOf="@+id/lblusername" />
+
 
 </RelativeLayout>

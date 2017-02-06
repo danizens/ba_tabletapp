@@ -5,4 +5,10 @@
     <string name="login">Login</string>
     <string name="username">Username:</string>
     <string name="password">Passwort:</string>
+    <string name="dienstnr">Dienstnummer</string>
+    <string name="dienstbeginn">Dienstbeginn</string>
+    <string name="dienstort">Ort</string>
+    <string name="dienstfahrzeug">Fahrzeug</string>
+    <string name="umleitung">Umleitungen</string>
+    <string name="btnweiter">Weiter</string>
 </resources>
