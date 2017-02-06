@@ -74,4 +74,76 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textSize="24sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imgDienstNr"
+        android:layout_marginBottom="17dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_above="@+id/txtDienstBeginn"
+        android:layout_alignRight="@+id/txtDienstNr"
+        android:layout_alignEnd="@+id/txtDienstNr" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imgDienstbeginng"
+        android:layout_alignTop="@+id/imgDienstNr"
+        android:layout_alignLeft="@+id/txtDienstBeginn"
+        android:layout_alignStart="@+id/txtDienstBeginn"
+        android:layout_marginLeft="65dp"
+        android:layout_marginStart="65dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/imgDienstbeginng"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgDienstOrt" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/imgDienstOrt"
+        android:layout_alignRight="@+id/txtDienstFahrzeug"
+        android:layout_alignEnd="@+id/txtDienstFahrzeug"
+        android:layout_marginRight="46dp"
+        android:layout_marginEnd="46dp"
+        android:id="@+id/imgDienstFahrzeug" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/imgDienstFahrzeug"
+        android:layout_alignLeft="@+id/txtUmleitung"
+        android:layout_alignStart="@+id/txtUmleitung"
+        android:layout_marginLeft="68dp"
+        android:layout_marginStart="68dp"
+        android:id="@+id/imgUmleitung" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/txtInputDienstnummer"
+        android:textSize="32sp"
+        android:layout_below="@+id/txtDienstNr"
+        android:layout_toRightOf="@+id/txtInputDienstWochentag"
+        android:layout_toEndOf="@+id/txtInputDienstWochentag" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInputDienstWochentag"
+        android:textSize="32sp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/txtDienstNr"
+        android:layout_alignStart="@+id/txtDienstNr" />
 </RelativeLayout>

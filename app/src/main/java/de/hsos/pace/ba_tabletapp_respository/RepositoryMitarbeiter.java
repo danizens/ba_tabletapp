@@ -32,7 +32,6 @@ public class RepositoryMitarbeiter {
                 //log.i("id: ", response.toString());
                 try {
                     if(response.getJSONArray("data").length() == 0){
-                        //Log.i("darf hier nicht rein","nein");
                         Toast.makeText(appctx, "Benutzername oder Passwort falsch.", Toast.LENGTH_LONG).show();
                         user.setId(0);
                     }else{
