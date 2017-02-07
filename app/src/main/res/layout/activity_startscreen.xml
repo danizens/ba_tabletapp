@@ -131,19 +131,70 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:id="@+id/txtInputDienstnummer"
-        android:textSize="32sp"
-        android:layout_below="@+id/txtDienstNr"
-        android:layout_toRightOf="@+id/txtInputDienstWochentag"
-        android:layout_toEndOf="@+id/txtInputDienstWochentag" />
+        android:id="@+id/txtInputDienstbeginn"
+        android:textSize="28sp"
+        android:layout_alignBaseline="@+id/txtInputDienstnummer"
+        android:layout_alignBottom="@+id/txtInputDienstnummer"
+        android:layout_alignLeft="@+id/txtDienstBeginn"
+        android:layout_alignStart="@+id/txtDienstBeginn"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInputOrt"
+        android:textSize="28sp"
+        android:layout_alignBaseline="@+id/txtInputDienstbeginn"
+        android:layout_alignBottom="@+id/txtInputDienstbeginn"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInputBus"
+        android:textSize="28sp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBaseline="@+id/txtInputOrt"
+        android:layout_alignBottom="@+id/txtInputOrt"
+        android:layout_alignRight="@+id/imgDienstFahrzeug"
+        android:layout_alignEnd="@+id/imgDienstFahrzeug" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtInputDienstWochentag"
-        android:textSize="32sp"
-        android:layout_centerVertical="true"
+        android:textSize="28sp"
+        android:layout_alignBaseline="@+id/txtInputDienstnummer"
+        android:layout_alignBottom="@+id/txtInputDienstnummer"
         android:layout_alignLeft="@+id/txtDienstNr"
         android:layout_alignStart="@+id/txtDienstNr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/txtInputDienstnummer"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_below="@+id/txtDienstNr"
+        android:layout_alignRight="@+id/txtDienstNr"
+        android:layout_alignEnd="@+id/txtDienstNr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInputUmleitung"
+        android:textSize="28sp"
+        android:text="@string/defaultUmleitung"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_alignBaseline="@+id/txtInputBus"
+        android:layout_alignBottom="@+id/txtInputBus"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
