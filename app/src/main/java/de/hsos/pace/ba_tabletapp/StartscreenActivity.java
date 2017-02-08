@@ -40,6 +40,8 @@ public class StartscreenActivity extends AppCompatActivity{
         String id = intent.getStringExtra("userid");
         final int mitarbeiterid = Integer.parseInt(id);
         final String[] busnummer = new String[1];
+        final String[] dienstid = {""};
+        final String[] dienstwochentag = {""};
 
         //Holen der Dienstlistennummer
         RepositoryDienstlisteDienst.getDienstListeId(new AsyncHttpResponseHandler() {
@@ -54,8 +56,8 @@ public class StartscreenActivity extends AppCompatActivity{
                     RepositoryDienstlisteDienst.getDienstNummerByIdDatum(mitarbeiterid, dienstlisteid, new AsyncHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                            String dienstid = "";
-                            String dienstwochentag = "";
+                            //String dienstid = "";
+                            //String dienstwochentag = "";
                             try {
                                 JSONObject obj = new JSONObject(new String(responseBody));
                                 if(obj.getString("data").length() == 0){
@@ -63,19 +65,19 @@ public class StartscreenActivity extends AppCompatActivity{
                                 }else{
                                     JSONArray tmparr = obj.getJSONArray("data");
                                     JSONObject newjson = tmparr.getJSONObject(0);
-                                    dienstwochentag = newjson.getString("dienstwochentag");
-                                    dienstid = newjson.getString("dienstid");
+                                    dienstwochentag[0] = newjson.getString("dienstwochentag");
+                                    dienstid[0] = newjson.getString("dienstid");
                                     dienstId = (TextView)findViewById(R.id.txtInputDienstnummer);
-                                    dienstId.setText(dienstid);
+                                    dienstId.setText(dienstid[0]);
                                     dienstWochentag = (TextView)findViewById(R.id.txtInputDienstWochentag);
-                                    dienstWochentag.setText(dienstwochentag.trim());
+                                    dienstWochentag.setText(dienstwochentag[0].trim());
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
 
                             //Holen der Startzeit und des ersten Ortes der Haltestelle
-                            RepositoryTaetigkeit.getTaetigkeitByDienstIdDienstwochentag(dienstid, dienstwochentag, new AsyncHttpResponseHandler() {
+                            RepositoryTaetigkeit.getTaetigkeitByDienstIdDienstwochentag(dienstid[0], dienstwochentag[0], new AsyncHttpResponseHandler() {
                                 @Override
                                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                                     try {
@@ -103,7 +105,7 @@ public class StartscreenActivity extends AppCompatActivity{
                             });
 
                             //Holen der Fahrzeugnummer für den Dienst
-                            RepositoryFahrzeug.getFahrzeugNummer(dienstid, dienstwochentag, new AsyncHttpResponseHandler() {
+                            RepositoryFahrzeug.getFahrzeugNummer(dienstid[0], dienstwochentag[0], new AsyncHttpResponseHandler() {
                                 @Override
                                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                                     try {
@@ -151,6 +153,8 @@ public class StartscreenActivity extends AppCompatActivity{
                 Intent intent = new Intent(StartscreenActivity.this, MenuscreenActivity.class);
                 intent.putExtra("userid", String.valueOf(mitarbeiterid));
                 intent.putExtra("busnummer", String.valueOf(busnummer[0]));
+                intent.putExtra("dienstid", String.valueOf(dienstid[0]));
+                intent.putExtra("dienstwochentag", String.valueOf(dienstwochentag[0]));
                 StartscreenActivity.this.startActivity(intent);
             }
         });

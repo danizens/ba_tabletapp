@@ -17,16 +17,20 @@ public class MenuscreenActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuscreen);
         Intent intent = getIntent();
-        final String mitarbeiterid = intent.getStringExtra("userid");
+        final String userid = intent.getStringExtra("userid");
         final String busnummer = intent.getStringExtra("busnummer");
+        final String dienstid = intent.getStringExtra("dienstid");
+        final String dienstwochentag = intent.getStringExtra("dienstwochentag");
 
         final ImageButton auswertung = (ImageButton)findViewById(R.id.imgbtnAuswertung);
         auswertung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuscreenActivity.this, AuswertungActivity.class);
-                intent.putExtra("mitarbeiterid", mitarbeiterid);
+                intent.putExtra("userid", userid);
                 intent.putExtra("busnummer", busnummer);
+                intent.putExtra("dienstid", dienstid);
+                intent.putExtra("dienstwochentag", dienstwochentag);
                 MenuscreenActivity.this.startActivity(intent);
             }
         });
