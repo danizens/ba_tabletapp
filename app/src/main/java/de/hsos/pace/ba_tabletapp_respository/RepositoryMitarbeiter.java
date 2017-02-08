@@ -24,29 +24,34 @@ public class RepositoryMitarbeiter {
 
     public void getMitarbeiterIdByUsernamePassword(final User user, final Context appctx){
         String url = conn_str + "mitarbeiter/"+user.getUsername()+"/"+user.getPasswort();
-        Log.i("URL: ", url);
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get(url, null, new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                //log.i("id: ", response.toString());
-                try {
-                    if(response.getJSONArray("data").length() == 0){
-                        Toast.makeText(appctx, "Benutzername oder Passwort falsch.", Toast.LENGTH_LONG).show();
-                        user.setId(0);
-                    }else{
-                        JSONArray arr = response.getJSONArray("data");
-                        int id = arr.getJSONObject(0).getInt("id");
-                        Intent intent = new Intent(appctx, StartscreenActivity.class);
-                        intent.putExtra("userid", String.valueOf(id));
-                        appctx.startActivity(intent);
-                        user.setId(id);
-                    }
+        //Log.i("URL: ", url);
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
+        if(user.getUsername().equals("") || user.getPasswort().equals("")){
+            Toast.makeText(appctx, "Benutzername oder Passwort falsch", Toast.LENGTH_LONG).show();
+        }else {
+            AsyncHttpClient client = new AsyncHttpClient();
+            client.get(url, null, new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    //log.i("id: ", response.toString());
+                    try {
+                        if (response.getJSONArray("data").length() == 0) {
+                            Toast.makeText(appctx, "Benutzername oder Passwort falsch.", Toast.LENGTH_LONG).show();
+                            user.setId(0);
+                        } else {
+                            JSONArray arr = response.getJSONArray("data");
+                            int id = arr.getJSONObject(0).getInt("id");
+                            Intent intent = new Intent(appctx, StartscreenActivity.class);
+                            intent.putExtra("userid", String.valueOf(id));
+                            appctx.startActivity(intent);
+                            user.setId(id);
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 }

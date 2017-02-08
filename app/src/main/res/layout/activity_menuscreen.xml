@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="97dp"
+        android:id="@+id/imgbtnFahrinformation"
+        android:layout_below="@+id/imgbtnAuswertung"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="109dp"
+        android:id="@+id/imgbtnHeute"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imgbtnDienstplan"
+        android:layout_toStartOf="@+id/imgbtnDienstplan"
+        android:layout_marginRight="88dp"
+        android:layout_marginEnd="88dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginRight="124dp"
+        android:layout_marginEnd="124dp"
+        android:id="@+id/imgbtnNachrichten"
+        android:layout_alignTop="@+id/imgbtnHeute"
+        android:layout_alignRight="@+id/imgbtnDienstplan"
+        android:layout_alignEnd="@+id/imgbtnDienstplan"
+        android:layout_marginTop="25dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imgbtnDienstplan"
+        android:layout_marginLeft="211dp"
+        android:layout_marginStart="211dp"
+        android:layout_alignTop="@+id/imgbtnAuswertung"
+        android:layout_toRightOf="@+id/imgbtnFahrinformation"
+        android:layout_toEndOf="@+id/imgbtnFahrinformation"
+        android:layout_marginTop="49dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="115dp"
+        android:id="@+id/imgbtnAuswertung"
+        android:layout_below="@+id/imgbtnNachrichten"
+        android:layout_toLeftOf="@+id/imgbtnFahrinformation"
+        android:layout_toStartOf="@+id/imgbtnFahrinformation"
+        android:layout_marginRight="194dp"
+        android:layout_marginEnd="194dp" />
+
+    <TextView
+        android:text="@string/txtauswertung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAuswertung"
+        android:textSize="24sp"
+        android:layout_marginRight="85dp"
+        android:layout_marginEnd="85dp"
+        android:layout_below="@+id/imgbtnAuswertung"
+        android:layout_toLeftOf="@+id/txtHeute"
+        android:layout_toStartOf="@+id/txtHeute" />
+
+    <TextView
+        android:text="@string/txtheute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtHeute"
+        android:textSize="24sp"
+        android:layout_alignBottom="@+id/imgbtnNachrichten"
+        android:layout_alignRight="@+id/imgbtnHeute"
+        android:layout_alignEnd="@+id/imgbtnHeute" />
+
+    <TextView
+        android:text="@string/txtfahrinformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFahrinformation"
+        android:textSize="24sp"
+        android:layout_below="@+id/imgbtnFahrinformation"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/txtdienstplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDienstplan"
+        android:textSize="24sp"
+        android:layout_below="@+id/imgbtnDienstplan"
+        android:layout_toRightOf="@+id/txtNachricht"
+        android:layout_toEndOf="@+id/txtNachricht" />
+
+    <TextView
+        android:text="@string/txtnachrichten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNachricht"
+        android:textSize="24sp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/imgbtnNachrichten"
+        android:layout_toRightOf="@+id/txtFahrinformation"
+        android:layout_toEndOf="@+id/txtFahrinformation" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/stadtwerke_osnabrueck_logo"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:id="@+id/imgDefault"
+        android:layout_above="@+id/imgbtnFahrinformation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp" />
+</RelativeLayout>

@@ -12,4 +12,9 @@
     <string name="umleitung">Umleitungen:</string>
     <string name="btnweiter">Weiter</string>
     <string name="defaultUmleitung">3 neue Umleitungen</string>
+    <string name="txtheute">Heute</string>
+    <string name="txtauswertung">Auswertung</string>
+    <string name="txtfahrinformation">Fahrinformation</string>
+    <string name="txtdienstplan">Dienstplan</string>
+    <string name="txtnachrichten">Nachrichten</string>
 </resources>

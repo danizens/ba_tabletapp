@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -24,7 +26,6 @@ import de.hsos.pace.ba_tabletapp_respository.RepositoryTaetigkeit;
  */
 
 public class StartscreenActivity extends AppCompatActivity{
-    //RepositoryDienstlisteDienst rdd = new RepositoryDienstlisteDienst();
     TextView dienstId;
     TextView dienstWochentag;
     TextView dienstBeginn;
@@ -38,6 +39,7 @@ public class StartscreenActivity extends AppCompatActivity{
         Intent intent = getIntent();
         String id = intent.getStringExtra("userid");
         final int mitarbeiterid = Integer.parseInt(id);
+        final String[] busnummer = new String[1];
 
         //Holen der Dienstlistennummer
         RepositoryDienstlisteDienst.getDienstListeId(new AsyncHttpResponseHandler() {
@@ -108,13 +110,12 @@ public class StartscreenActivity extends AppCompatActivity{
                                         JSONObject obj = new JSONObject(new String(responseBody));
                                         JSONArray arr = obj.getJSONArray("data");
                                         JSONObject tmpobj = arr.getJSONObject(0);
-                                        String busnummer = tmpobj.getString("busnummer");
+                                        busnummer[0] = tmpobj.getString("busnummer");
                                         dienstFahrzeug = (TextView)findViewById(R.id.txtInputBus);
-                                        dienstFahrzeug.setText(busnummer);
+                                        dienstFahrzeug.setText(busnummer[0]);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
-
                                 }
 
                                 @Override
@@ -140,7 +141,18 @@ public class StartscreenActivity extends AppCompatActivity{
                 Log.e("onFailure", String.valueOf(statusCode));
             }
 
+        });
 
+        //Verzweigen ins Menü, mit Intent der Busnummer und der Mitarbeiterid
+        final Button button = (Button)findViewById(R.id.btnWeiter);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StartscreenActivity.this, MenuscreenActivity.class);
+                intent.putExtra("userid", String.valueOf(mitarbeiterid));
+                intent.putExtra("busnummer", String.valueOf(busnummer[0]));
+                StartscreenActivity.this.startActivity(intent);
+            }
         });
 
         //Holen der DienstId und des DienstWochentags, zum Anzeigen auf dem Bildschirm
