@@ -29,7 +29,7 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".AuswertungActivity"
+            android:name=".HeuteActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
