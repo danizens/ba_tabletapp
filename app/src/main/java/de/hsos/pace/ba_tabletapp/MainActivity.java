@@ -51,4 +51,14 @@ public class MainActivity extends AppCompatActivity {
         String password = text.getText().toString();
         return password;
     }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        EditText username = (EditText)findViewById(R.id.txtusername);
+        username.setText("");
+        EditText password = (EditText)findViewById(R.id.txtpassword);
+        password.setText("");
+        Log.i("hallo","onResume");
+    }
 }

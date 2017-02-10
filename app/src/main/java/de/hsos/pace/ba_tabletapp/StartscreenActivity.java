@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +13,6 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import cz.msebera.android.httpclient.Header;
 import de.hsos.pace.ba_tabletapp_respository.RepositoryDienstlisteDienst;
@@ -56,8 +54,6 @@ public class StartscreenActivity extends AppCompatActivity{
                     RepositoryDienstlisteDienst.getDienstNummerByIdDatum(mitarbeiterid, dienstlisteid, new AsyncHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                            //String dienstid = "";
-                            //String dienstwochentag = "";
                             try {
                                 JSONObject obj = new JSONObject(new String(responseBody));
                                 if(obj.getString("data").length() == 0){
@@ -158,18 +154,5 @@ public class StartscreenActivity extends AppCompatActivity{
                 StartscreenActivity.this.startActivity(intent);
             }
         });
-
-        //Holen der DienstId und des DienstWochentags, zum Anzeigen auf dem Bildschirm
-
-        //Log.i("dienstid", String.valueOf(dienstlisteid));
-        /*dienstId = (TextView)findViewById(R.id.txtInputDienstnummer);
-        dienstId.setText(String.valueOf(id));
-
-        dienstWochentag = (TextView)findViewById(R.id.txtInputDienstWochentag);
-        Intent intent = getIntent();
-        String id = intent.getStringExtra("userid");
-        int mitarbeiterid = Integer.parseInt(id);
-        Log.i("Userid:",String.valueOf(mitarbeiterid));*/
-        //rdd.getDienstlisteId(mitarbeiterid);
     }
 }

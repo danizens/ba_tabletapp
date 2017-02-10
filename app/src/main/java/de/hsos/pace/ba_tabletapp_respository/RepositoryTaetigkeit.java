@@ -14,8 +14,4 @@ public class RepositoryTaetigkeit {
     public static void getTaetigkeitByDienstIdDienstwochentag(String dienstid, String dienstwochentag, AsyncHttpResponseHandler handler){
         mClient.get(conn_str + "taetigkeit/dienst/" + dienstwochentag + "/" + dienstid, handler);
     }
-
-    public static void getDienstKuerzel(String dienstid, String dienstwochentag, AsyncHttpResponseHandler handler){
-        mClient.get(conn_str, handler);
-    }
 }
