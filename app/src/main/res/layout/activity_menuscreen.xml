@@ -8,7 +8,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/info_16x"
         android:layout_marginTop="97dp"
         android:id="@+id/imgbtnFahrinformation"
         android:layout_below="@+id/imgbtnAuswertung"
@@ -17,7 +17,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/map_marker_16x"
         android:layout_marginTop="109dp"
         android:id="@+id/imgbtnHeute"
         android:layout_alignParentTop="true"
@@ -29,7 +29,8 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        android:adjustViewBounds="true"
+        app:srcCompat="@mipmap/chat_16x"
         android:layout_marginRight="124dp"
         android:layout_marginEnd="124dp"
         android:id="@+id/imgbtnNachrichten"
@@ -41,7 +42,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/clipboard_16x"
         android:id="@+id/imgbtnDienstplan"
         android:layout_marginLeft="211dp"
         android:layout_marginStart="211dp"
@@ -53,7 +54,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/align_left_16x"
         android:layout_marginTop="115dp"
         android:id="@+id/imgbtnAuswertung"
         android:layout_below="@+id/imgbtnNachrichten"

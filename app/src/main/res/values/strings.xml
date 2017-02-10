@@ -17,4 +17,10 @@
     <string name="txtfahrinformation">Fahrinformation</string>
     <string name="txtdienstplan">Dienstplan</string>
     <string name="txtnachrichten">Nachrichten</string>
+    <string name="actheutename">|Name:</string>
+    <string name="actheutestatus1">Status1:</string>
+    <string name="actheutestartzeit">Startzeit:</string>
+    <string name="actheuteortkuerzel">Ort_Kuerzel:</string>
+    <string name="actheuteendzeit">Endzeit:</string>
+    <string name="actheutestatus2">Status2:</string>
 </resources>

@@ -78,7 +78,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/tags_16x"
         android:id="@+id/imgDienstNr"
         android:layout_marginBottom="17dp"
         android:layout_marginRight="80dp"
@@ -90,7 +90,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/clock_16x"
         android:id="@+id/imgDienstbeginng"
         android:layout_alignTop="@+id/imgDienstNr"
         android:layout_alignLeft="@+id/txtDienstBeginn"
@@ -101,7 +101,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/location_16x"
         android:layout_alignTop="@+id/imgDienstbeginng"
         android:layout_centerHorizontal="true"
         android:id="@+id/imgDienstOrt" />
@@ -109,7 +109,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/cart_16x"
         android:layout_alignTop="@+id/imgDienstOrt"
         android:layout_alignRight="@+id/txtDienstFahrzeug"
         android:layout_alignEnd="@+id/txtDienstFahrzeug"
@@ -120,7 +120,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/flag_16x"
         android:layout_alignTop="@+id/imgDienstFahrzeug"
         android:layout_alignLeft="@+id/txtUmleitung"
         android:layout_alignStart="@+id/txtUmleitung"
