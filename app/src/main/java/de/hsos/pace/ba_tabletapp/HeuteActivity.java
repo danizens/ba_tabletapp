@@ -49,45 +49,46 @@ public class HeuteActivity extends AppCompatActivity{
                     for(int i = 0; i < arr.length(); i++){
                         TextView dienstname = new TextView(HeuteActivity.this);
                         dienstname.setTextSize(50);
-                        dienstname.setText("|Name:");
+                        dienstname.setText(R.string.actheutename);
 
                         TextView status1 = new TextView(HeuteActivity.this);
                         status1.setTextSize(50);
-                        status1.setText("Status1:");
+                        status1.setText(R.string.actheutestatus1);
 
                         TextView startzeit = new TextView(HeuteActivity.this);
                         startzeit.setTextSize(50);
-                        startzeit.setText("Startzeit:");
+                        startzeit.setText(R.string.actheutestartzeit);
 
                         TextView ort = new TextView(HeuteActivity.this);
                         ort.setTextSize(50);
-                        ort.setText("Ort_Kuerzel:");
+                        ort.setText(R.string.actheuteortkuerzel);
 
                         TextView endzeit = new TextView(HeuteActivity.this);
                         endzeit.setTextSize(50);
-                        endzeit.setText("Endzeit:");
+                        endzeit.setText(R.string.actheuteendzeit);
 
                         TextView status2 = new TextView(HeuteActivity.this);
                         status2.setTextSize(50);
-                        status2.setText("Status2:");
+                        status2.setText(R.string.actheutestatus2);
 
                         GridLayout.LayoutParams layoutName = new GridLayout.LayoutParams();
-                        layoutName.rightMargin = 20;
+                        layoutName.rightMargin = 40;
 
                         GridLayout.LayoutParams layoutStatus1 = new GridLayout.LayoutParams();
-                        layoutStatus1.rightMargin = 20;
+                        layoutStatus1.rightMargin = 40;
 
                         GridLayout.LayoutParams layoutStartzeit = new GridLayout.LayoutParams();
-                        layoutStartzeit.rightMargin = 20;
+                        layoutStartzeit.rightMargin = 40;
 
                         GridLayout.LayoutParams layoutOrt = new GridLayout.LayoutParams();
-                        layoutOrt.rightMargin = 20;
+                        layoutOrt.rightMargin = 40;
 
                         GridLayout.LayoutParams layoutEndzeit = new GridLayout.LayoutParams();
-                        layoutEndzeit.rightMargin = 20;
+                        layoutEndzeit.rightMargin = 40;
 
                         GridLayout.LayoutParams layoutStatus2 = new GridLayout.LayoutParams();
-                        layoutStatus2.rightMargin = 20;
+                        layoutStatus2.rightMargin = 40;
+
 
                         glayout.addView(dienstname, layoutName);
                         glayout.addView(status1, layoutStatus1);
@@ -95,6 +96,7 @@ public class HeuteActivity extends AppCompatActivity{
                         glayout.addView(ort, layoutOrt);
                         glayout.addView(endzeit, layoutEndzeit);
                         glayout.addView(status2, layoutStatus2);
+
                     }
 
                     for(int i = 0; i < arr.length(); i++){
@@ -102,7 +104,11 @@ public class HeuteActivity extends AppCompatActivity{
 
                         TextView dienstnameinp = new TextView(HeuteActivity.this);
                         dienstnameinp.setTextSize(40);
-                        dienstnameinp.setText("|"+newobj.getString("name").trim());
+                        if(newobj.getString("name").trim().equals("Fuellzeit")){
+                            dienstnameinp.setText("|Füllzeit");
+                        }else{
+                            dienstnameinp.setText("|"+newobj.getString("name").trim());
+                        }
 
                         TextView status1inp = new TextView(HeuteActivity.this);
                         status1inp.setTextSize(40);
@@ -125,23 +131,25 @@ public class HeuteActivity extends AppCompatActivity{
                         status2inp.setText(newobj.getString("status2").trim());
 
                         GridLayout.LayoutParams layoutNameInp = new GridLayout.LayoutParams();
-                        layoutNameInp.rightMargin = 20;
+                        layoutNameInp.rightMargin = 30;
                         GridLayout.LayoutParams layoutStatus1Inp = new GridLayout.LayoutParams();
-                        layoutStatus1Inp.rightMargin = 20;
+                        layoutStatus1Inp.rightMargin = 30;
                         GridLayout.LayoutParams layoutStartzeitInp = new GridLayout.LayoutParams();
-                        layoutStartzeitInp.rightMargin = 20;
+                        layoutStartzeitInp.rightMargin = 30;
                         GridLayout.LayoutParams layoutOrtInp = new GridLayout.LayoutParams();
-                        layoutOrtInp.rightMargin = 20;
+                        layoutOrtInp.rightMargin = 30;
                         GridLayout.LayoutParams layoutEndzeitInp = new GridLayout.LayoutParams();
-                        layoutEndzeitInp.rightMargin = 20;
+                        layoutEndzeitInp.rightMargin = 30;
                         GridLayout.LayoutParams layoutStatus2Inp = new GridLayout.LayoutParams();
-                        layoutStatus2Inp.rightMargin = 20;
+                        layoutStatus2Inp.rightMargin = 30;
+
                         glayout.addView(dienstnameinp, layoutNameInp);
                         glayout.addView(status1inp, layoutStatus1Inp);
                         glayout.addView(startzeitinp, layoutStartzeitInp);
                         glayout.addView(ortinp, layoutOrtInp);
                         glayout.addView(endzeitinp, layoutEndzeitInp);
                         glayout.addView(status2inp, layoutStatus2Inp);
+
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

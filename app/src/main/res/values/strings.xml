@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ba_tabletapp</string>
+    <string name="app_name">Fahrer App</string>
     <string name="action_settings">Settings</string>
     <string name="helloworld">Hello World</string>
     <string name="login">Login</string>
@@ -17,11 +17,11 @@
     <string name="txtfahrinformation">Fahrinformation</string>
     <string name="txtdienstplan">Dienstplan</string>
     <string name="txtnachrichten">Nachrichten</string>
-    <string name="actheutename">|Name:</string>
-    <string name="actheutestatus1">Status1:</string>
-    <string name="actheutestartzeit">Startzeit:</string>
-    <string name="actheuteortkuerzel">Ort_Kuerzel:</string>
-    <string name="actheuteendzeit">Endzeit:</string>
-    <string name="actheutestatus2">Status2:</string>
+    <string name="actheutename">|Bezeichnung</string>
+    <string name="actheutestatus1">Status1</string>
+    <string name="actheutestartzeit">Startzeit</string>
+    <string name="actheuteortkuerzel">Ort</string>
+    <string name="actheuteendzeit">Endzeit</string>
+    <string name="actheutestatus2">Status2</string>
     <string name="menueuebersicht">Übersicht</string>
 </resources>
