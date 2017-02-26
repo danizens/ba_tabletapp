@@ -23,6 +23,7 @@ import de.hsos.pace.ba_tabletapp_respository.RepositoryTaetigkeit;
  * Created by danielzens on 27.01.17.
  */
 
+//Ermitteln der Start in den Tag Informationen
 public class StartscreenActivity extends AppCompatActivity{
     TextView dienstId;
     TextView dienstWochentag;

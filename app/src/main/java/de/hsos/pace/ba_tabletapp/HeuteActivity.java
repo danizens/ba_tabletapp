@@ -21,6 +21,8 @@ import de.hsos.pace.ba_tabletapp_respository.RepositoryTaetigkeit;
  */
 
 public class HeuteActivity extends AppCompatActivity{
+    //Ermitteln der Dienstinformationen, per AsyncHttpClient
+    //Zu ermittelnde Daten: Bezeichnung, Status1, Startzeit, Ort, Endzeit, Status2
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -30,6 +32,8 @@ public class HeuteActivity extends AppCompatActivity{
         String busnummer = intent.getStringExtra("busnummer");
         String dienstid = intent.getStringExtra("dienstid");
         String dienstwochentag = intent.getStringExtra("dienstwochentag");
+        //Ermittelt die einzelnen Tätigkeiten eines Dienstes durch die Dienstid und den Dienstwochentag
+        //Aufruf ins Repository
         RepositoryTaetigkeit.getTaetigkeitByDienstIdDienstwochentag(dienstid, dienstwochentag, new AsyncHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -46,6 +50,7 @@ public class HeuteActivity extends AppCompatActivity{
                     glayout.setRowCount(rowcount);
                     glayout.setColumnCount(columncount);
 
+                    //Setzen der Überschriften im GRID-Layout
                     for(int i = 0; i < arr.length(); i++){
                         TextView dienstname = new TextView(HeuteActivity.this);
                         dienstname.setTextSize(50);
@@ -99,6 +104,7 @@ public class HeuteActivity extends AppCompatActivity{
 
                     }
 
+                    //Setzen der gelesen Werte der erhaltenen JSON-Objekte
                     for(int i = 0; i < arr.length(); i++){
                         JSONObject newobj = arr.getJSONObject(i);
 
